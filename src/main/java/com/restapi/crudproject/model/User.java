@@ -11,13 +11,14 @@ import jakarta.persistence.Id;
  */
 public class User {
     
-    @Id
+    
+    @Id // Clé primaire 
     @GeneratedValue
     private Long id;
     private String username;
     private String name;
     private String email;
-
+   
 
     /**
      * @return Long return the id
@@ -66,7 +67,7 @@ public class User {
      */
     public String getEmail() {
         return email;
-    }
+    };
 
     /**
      * @param email the email to set
@@ -76,3 +77,4 @@ public class User {
     }
 
 }
+
