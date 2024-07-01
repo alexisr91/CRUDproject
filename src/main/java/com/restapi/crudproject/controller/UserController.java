@@ -26,7 +26,13 @@ public class UserController {
     @PostMapping("/user")
     //L'annotation @PostMapping est utilisée pour mapper une requête HTTP POST à une méthode spécifique dans votre contrôleur. En d'autres termes, elle indique que lorsque le serveur reçoit une requête POST à une certaine URL, il doit appeler la méthode annotée.
     User newUser(@RequestBody User newUser){
-        return userRepository.save(newUser);
+        // return userRepository.save(newUser);
+        try {
+            return userRepository.save(newUser); 
+        }catch (Exception e) {
+             e.printStackTrace();  
+         }
+        return newUser;
     }
 
     @GetMapping("/users")
